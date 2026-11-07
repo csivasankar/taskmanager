@@ -1,0 +1,22 @@
+# Java / Maven
+backend/target/
+*.class
+*.log
+
+# Angular / Node
+frontend/task-manager-ui/node_modules/
+frontend/task-manager-ui/dist/
+frontend/task-manager-ui/.angular/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+application-local.properties
