@@ -1,22 +1,26 @@
-# Java / Maven
-backend/target/
-*.class
-*.log
-
-# Angular / Node
+# Angular dependencies
 frontend/task-manager-ui/node_modules/
+
+# Angular build output
 frontend/task-manager-ui/dist/
 frontend/task-manager-ui/.angular/
 
-# IDE
+# Angular cache
+frontend/task-manager-ui/.cache/
+
+# Java build output
+backend/target/
+
+# IDE files
 .idea/
 .vscode/
 *.iml
 
-# OS
+# Operating system
 .DS_Store
 Thumbs.db
 
-# Environment / secrets
-.env
-application-local.properties
+# Logs
+*.log
+
+/frontend-backup/

@@ -1,7 +1,8 @@
+
 /**
  * Represents a task in the Task Manager application.
  *
- * This entity stores task details such as title, description.
+ * This entity stores task details such as title and description.
  *
  * @author Sivasankar
  * @version 1.0
@@ -11,10 +12,19 @@
 package org.taskmanager.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tasks")
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Task {
 
     @Id
@@ -32,39 +42,5 @@ public class Task {
     @PrePersist
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", createdAt=" + createdAt +
-                '}';
     }
 }
