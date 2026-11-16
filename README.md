@@ -54,7 +54,7 @@ Backend URL: `http://localhost:8080`
 1. Navigate to the frontend folder:
 
 ```bash
-cd frontend
+cd frontend/task-manager-ui
 ```
 
 2. Install dependencies:
@@ -62,70 +62,7 @@ cd frontend
 ```bash
 npm install -g @angular/cli
 ```
-
-3. Create the project:
-
-```
-ng new task-manager-ui --standalone --routing=false --style=css
-```
-
-4. Navigate into the project:
-
-```
-cd task-manager-ui
-```
-
-5. Generate the component and service:
-
-```
-ng generate component task
-ng generate service task
-```
-
-6. Create Task interface:
-
-```
- Create this file inside src/app/.
- task.model.ts
-```
-
-7. Change Angular service
-
-```
-task.service.ts
-```
-
-8. Configure HttpClient
-
-```
-app.config.ts
-```
-
-9. Change task component
-
-```agsl
-task.component.ts
-```
-
-10. Change task HTML page
-
-```agsl
-task.component.html
-```
-
-11. Add required css changes
-
-```agsl
-task.component.css
-```
-
-12. Display task component
-
-```agsl
-app.component.ts
-```
-
-13. Start Angular:
+3. Start Angular:
 
 ```bash
 ng serve
@@ -140,6 +77,9 @@ Frontend URL: `http://localhost:4200`
 - Backend and frontend integration.
 - Task management functionality (as implemented).
 - Database persistence using Spring Data JPA.
+- Error Handling
+- Swagger Implementation
+- Pagination
 
 ## Pending Improvements
 
@@ -147,11 +87,9 @@ Frontend URL: `http://localhost:4200`
 - Improved exception handling.
 - Unit and integration test coverage.
 - User-friendly error messages.
-- Swagger Implementation
 - JWT-based authentication.
 - Role-based access control.
 - Logging and monitoring.
-- Pagination
 
 ## Author
 

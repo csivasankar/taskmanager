@@ -1,14 +1,12 @@
+
 <div class="container">
 
   <h2>Simple Task Manager</h2>
 
   <!-- Add Task Form -->
-
-  <form [formGroup]="taskForm"
-        (ngSubmit)="addTask()">
+  <form [formGroup]="taskForm" (ngSubmit)="addTask()">
 
     <div class="form-group">
-
       <label>Task Title *</label>
 
       <input
@@ -19,25 +17,20 @@
       <div class="error"
            *ngIf="taskForm.get('title')?.touched &&
                   taskForm.get('title')?.hasError('required')">
-
         Title is required.
-
       </div>
-
     </div>
 
     <div class="form-group">
-
       <label>Description</label>
 
       <textarea
         formControlName="description"
         placeholder="Enter description">
       </textarea>
-
     </div>
 
-    <button type="submit">
+    <button type="submit" [disabled]="loading">
       Add Task
     </button>
 
@@ -46,7 +39,6 @@
   <hr>
 
   <!-- Task List -->
-
   <h3>Created Tasks</h3>
 
   <p *ngIf="loading">Loading tasks...</p>
@@ -56,15 +48,74 @@
   </p>
 
   <div *ngIf="!loading && tasks.length === 0">
-
     No tasks available.
+  </div>
+
+  <!-- Existing Task Display -->
+  <div *ngIf="!loading && tasks.length > 0">
+
+    <div class="task-item" *ngFor="let task of tasks">
+
+      <h4>{{ task.title }}</h4>
+
+      <p>{{ task.description }}</p>
+
+      <small *ngIf="task.createdAt">
+        Created: {{ task.createdAt | date:'medium' }}
+      </small>
+
+    </div>
 
   </div>
 
-  <div *ngFor="let task of tasks" class="task-card">
-    <h3>{{ task.title }}</h3>
-    <p>{{ task.description }}</p>
-    <small>{{ task.createdAt | date:'medium' }}</small>
+  <!-- Pagination -->
+  <div class="pagination-container"
+       *ngIf="!loading && totalElements > 0">
+
+    <div class="page-info">
+      Total Tasks: {{ totalElements }}
+    </div>
+
+    <div class="pagination-controls">
+
+      <button
+        type="button"
+        [disabled]="currentPage === 0"
+        (click)="changePage(currentPage - 1)">
+        Previous
+      </button>
+
+      <button
+        type="button"
+        *ngFor="let page of pages"
+        [class.active]="currentPage === page"
+        (click)="changePage(page)">
+        {{ page + 1 }}
+      </button>
+
+      <button
+        type="button"
+        [disabled]="currentPage >= totalPages - 1"
+        (click)="changePage(currentPage + 1)">
+        Next
+      </button>
+
+    </div>
+
+    <div class="page-size">
+      <label>Records per page:</label>
+
+      <select
+        [value]="pageSize"
+        (change)="changePageSize(+$any($event.target).value)">
+
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+
+      </select>
+    </div>
+
   </div>
 
 </div>

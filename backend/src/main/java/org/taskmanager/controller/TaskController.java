@@ -86,12 +86,10 @@ public class TaskController {
             @RequestParam(defaultValue = "id") String sortBy,
             @Parameter(description = "Sorting direction: asc or desc", example = "desc")
             @RequestParam(defaultValue = "desc") String direction) {
-
         if (page < 0 || size < 1 || size > 100) {
             throw new IllegalArgumentException(
                     "Page must be non-negative and size must be between 1 and 100");
         }
-
         Set<String> allowedFields = Set.of(
                 "id", "title", "description", "createdAt");
 
