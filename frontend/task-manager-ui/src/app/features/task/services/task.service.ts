@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Task, PageResponse } from './task.model';
+import { Task, PageResponse } from '../../models/task.model';
 
 @Injectable({
   providedIn: 'root'

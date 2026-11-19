@@ -109,4 +109,39 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 6px;
+  padding: 12px 0 12px 0;
+}
+
+.pagination-container {
+  padding-top: 12px;
+}
+
+.sorting-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.sort-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sorting-container select,
+.page-size select {
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sort-direction {
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+.sort-direction:hover {
+  opacity: 0.85;
 }
