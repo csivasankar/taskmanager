@@ -60,7 +60,7 @@ cd frontend/task-manager-ui
 2. Install dependencies:
 
 ```bash
-npm install -g @angular/cli
+npm install
 ```
 3. Start Angular:
 
