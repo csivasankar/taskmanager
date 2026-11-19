@@ -173,6 +173,8 @@ Verification:
 - Confirm that frontend API integration with the Spring Boot backend works correctly.
 
 ![UI task Creation](screenshots/ui-add-task.jpg)
+- After clicking the 'Add Task' button, the newly created task is automatically displayed in the list below.
+
 ![UI task List](screenshots/ui-task-list.jpg)
 
 ### 6. Overall Application Verification
